@@ -1,0 +1,17 @@
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Application\obj\Debug\net8.0\BarberFlow.Application.csproj.AssemblyReference.cache
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Application\obj\Debug\net8.0\BarberFlow.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Application\obj\Debug\net8.0\BarberFlow.Application.AssemblyInfoInputs.cache
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Application\obj\Debug\net8.0\BarberFlow.Application.AssemblyInfo.cs
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Application\obj\Debug\net8.0\BarberFlow.Application.csproj.CoreCompileInputs.cache
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Application\bin\Debug\net8.0\BarberFlow.Application.deps.json
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Application\bin\Debug\net8.0\BarberFlow.Application.dll
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Application\bin\Debug\net8.0\BarberFlow.Application.pdb
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Application\bin\Debug\net8.0\BarberFlow.Domain.dll
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Application\bin\Debug\net8.0\BarberFlow.Infrastructure.dll
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Application\bin\Debug\net8.0\BarberFlow.Domain.pdb
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Application\bin\Debug\net8.0\BarberFlow.Infrastructure.pdb
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Application\obj\Debug\net8.0\BarberFl.6A673B52.Up2Date
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Application\obj\Debug\net8.0\BarberFlow.Application.dll
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Application\obj\Debug\net8.0\refint\BarberFlow.Application.dll
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Application\obj\Debug\net8.0\BarberFlow.Application.pdb
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Application\obj\Debug\net8.0\ref\BarberFlow.Application.dll

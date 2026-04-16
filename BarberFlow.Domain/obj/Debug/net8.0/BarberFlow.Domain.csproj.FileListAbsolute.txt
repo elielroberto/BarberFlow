@@ -1,0 +1,11 @@
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Domain\bin\Debug\net8.0\BarberFlow.Domain.deps.json
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Domain\bin\Debug\net8.0\BarberFlow.Domain.dll
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Domain\bin\Debug\net8.0\BarberFlow.Domain.pdb
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Domain\obj\Debug\net8.0\BarberFlow.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Domain\obj\Debug\net8.0\BarberFlow.Domain.AssemblyInfoInputs.cache
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Domain\obj\Debug\net8.0\BarberFlow.Domain.AssemblyInfo.cs
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Domain\obj\Debug\net8.0\BarberFlow.Domain.csproj.CoreCompileInputs.cache
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Domain\obj\Debug\net8.0\BarberFlow.Domain.dll
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Domain\obj\Debug\net8.0\refint\BarberFlow.Domain.dll
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Domain\obj\Debug\net8.0\BarberFlow.Domain.pdb
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Domain\obj\Debug\net8.0\ref\BarberFlow.Domain.dll

@@ -1,0 +1,11 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "BarberFlow.API\\BarberFlow.API.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

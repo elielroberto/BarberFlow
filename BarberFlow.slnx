@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="BarberFlow.API/BarberFlow.API.csproj" />
+  <Project Path="BarberFlow.Application/BarberFlow.Application.csproj" />
+  <Project Path="BarberFlow.Domain/BarberFlow.Domain.csproj" />
+  <Project Path="BarberFlow.Infrastructure/BarberFlow.Infrastructure.csproj" />
+  <Project Path="BarberFlow.Tests/BarberFlow.Tests.csproj" />
+</Solution>
