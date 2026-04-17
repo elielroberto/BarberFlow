@@ -1,5 +1,6 @@
 ﻿using BarberFlow.Application.DTOs.Service;
 using BarberFlow.Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BarberFlow.API.Controllers
@@ -14,6 +15,7 @@ namespace BarberFlow.API.Controllers
             _service = service;
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Create(CreateServiceDto dto)
         {
@@ -25,6 +27,7 @@ namespace BarberFlow.API.Controllers
                 new { id });
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -32,6 +35,7 @@ namespace BarberFlow.API.Controllers
             return Ok(services);
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
@@ -41,6 +45,7 @@ namespace BarberFlow.API.Controllers
             return Ok(service);
         }
 
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(Guid id, UpdateServiceDto dto)
         {
@@ -52,6 +57,7 @@ namespace BarberFlow.API.Controllers
             return Ok(service);
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {

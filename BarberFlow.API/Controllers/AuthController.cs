@@ -31,12 +31,12 @@ namespace BarberFlow.API.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginDto dto)
         {
-            var result = await _authService.LoginAsync(dto);
+            var token = await _authService.LoginAsync(dto);
 
-            if (!result)
+            if (token == null)
                 return Unauthorized("Email ou senha inválidos");
 
-            return Ok("Login realizado com sucesso");
+            return Ok(new {token});
         }
 
     }

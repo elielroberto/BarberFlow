@@ -14,10 +14,11 @@ namespace BarberFlow.Application.Services
     public class AuthService : IAuthService
     {
         private readonly AppDbContext _context;
-
-        public AuthService(AppDbContext context)
+        private readonly TokenService _tokenService;
+        public AuthService(AppDbContext context, TokenService tokenService)
         {
             _context = context;
+            _tokenService = tokenService;
         }
 
         public async Task<bool> RegisterAsync(RegisterDto dto)
@@ -40,19 +41,20 @@ namespace BarberFlow.Application.Services
             return true;
         }
 
-        public async Task<bool> LoginAsync(LoginDto dto)
+        public async Task<string> LoginAsync(LoginDto dto)
         {
             var user = await _context.Users.FirstOrDefaultAsync(x => x.Email == dto.Email);
 
             if (user == null)
-                return false;
+                return null;
 
             var validPassword = BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash);
 
             if (!validPassword)
-                return false;
+                return null;
 
-            return true;
+            return _tokenService.GenerateToken(user);
+
         }
 
     }
