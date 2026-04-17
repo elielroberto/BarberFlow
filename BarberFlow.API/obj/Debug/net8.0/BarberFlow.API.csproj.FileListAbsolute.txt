@@ -230,4 +230,9 @@ C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.API\obj\Debug\net8.0\
 C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.API\obj\Debug\net8.0\BarberFlow.API.pdb
 C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.API\obj\Debug\net8.0\BarberFlow.API.genruntimeconfig.cache
 C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.API\obj\Debug\net8.0\ref\BarberFlow.API.dll
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.API\obj\Debug\net8.0\BarberFlow.API.sourcelink.json
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.API\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.API\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.API\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.API\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

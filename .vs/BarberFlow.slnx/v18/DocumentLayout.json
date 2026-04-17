@@ -3,40 +3,76 @@
   "WorkspaceRootPath": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2B3A3BD6-E3C2-7F38-F013-4D3FBC433E2E}|BarberFlow.Infrastructure\\BarberFlow.Infrastructure.csproj|c:\\users\\eliel.roberto\\desktop\\balta\\barberflow\\barberflow.infrastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B3A3BD6-E3C2-7F38-F013-4D3FBC433E2E}|BarberFlow.Infrastructure\\BarberFlow.Infrastructure.csproj|solutionrelative:barberflow.infrastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F4FD69DF-F7EA-A214-9AB3-F48E98177E5C}|BarberFlow.API\\BarberFlow.API.csproj|c:\\users\\eliel.roberto\\desktop\\balta\\barberflow\\barberflow.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4FD69DF-F7EA-A214-9AB3-F48E98177E5C}|BarberFlow.API\\BarberFlow.API.csproj|solutionrelative:barberflow.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4FD69DF-F7EA-A214-9AB3-F48E98177E5C}|BarberFlow.API\\BarberFlow.API.csproj|c:\\users\\eliel.roberto\\desktop\\balta\\barberflow\\barberflow.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4FD69DF-F7EA-A214-9AB3-F48E98177E5C}|BarberFlow.API\\BarberFlow.API.csproj|solutionrelative:barberflow.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4FD69DF-F7EA-A214-9AB3-F48E98177E5C}|BarberFlow.API\\BarberFlow.API.csproj|c:\\users\\eliel.roberto\\desktop\\balta\\barberflow\\barberflow.api\\controllers\\servicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4FD69DF-F7EA-A214-9AB3-F48E98177E5C}|BarberFlow.API\\BarberFlow.API.csproj|solutionrelative:barberflow.api\\controllers\\servicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|c:\\users\\eliel.roberto\\desktop\\balta\\barberflow\\barberflow.application\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|solutionrelative:barberflow.application\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|c:\\users\\eliel.roberto\\desktop\\balta\\barberflow\\barberflow.application\\interfaces\\iserviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|solutionrelative:barberflow.application\\interfaces\\iserviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|c:\\users\\eliel.roberto\\desktop\\balta\\barberflow\\barberflow.application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|solutionrelative:barberflow.application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|c:\\users\\eliel.roberto\\desktop\\balta\\barberflow\\barberflow.application\\dtos\\user\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|solutionrelative:barberflow.application\\dtos\\user\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|c:\\users\\eliel.roberto\\desktop\\balta\\barberflow\\barberflow.application\\dtos\\user\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|solutionrelative:barberflow.application\\dtos\\user\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B3A3BD6-E3C2-7F38-F013-4D3FBC433E2E}|BarberFlow.Infrastructure\\BarberFlow.Infrastructure.csproj|c:\\users\\eliel.roberto\\desktop\\balta\\barberflow\\barberflow.infrastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B3A3BD6-E3C2-7F38-F013-4D3FBC433E2E}|BarberFlow.Infrastructure\\BarberFlow.Infrastructure.csproj|solutionrelative:barberflow.infrastructure\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE972BBE-8B21-BFD1-9572-8B73AC356E59}|BarberFlow.Domain\\BarberFlow.Domain.csproj|c:\\users\\eliel.roberto\\desktop\\balta\\barberflow\\barberflow.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE972BBE-8B21-BFD1-9572-8B73AC356E59}|BarberFlow.Domain\\BarberFlow.Domain.csproj|solutionrelative:barberflow.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|c:\\users\\eliel.roberto\\desktop\\balta\\barberflow\\barberflow.application\\validators\\createservicevalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|solutionrelative:barberflow.application\\validators\\createservicevalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|c:\\users\\eliel.roberto\\desktop\\balta\\barberflow\\barberflow.application\\barberflow.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|solutionrelative:barberflow.application\\barberflow.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|c:\\users\\eliel.roberto\\desktop\\balta\\barberflow\\barberflow.application\\services\\serviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|solutionrelative:barberflow.application\\services\\serviceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|c:\\users\\eliel.roberto\\desktop\\balta\\barberflow\\barberflow.application\\dtos\\updateservicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|solutionrelative:barberflow.application\\dtos\\updateservicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|c:\\users\\eliel.roberto\\desktop\\balta\\barberflow\\barberflow.application\\dtos\\service\\serviceresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|solutionrelative:barberflow.application\\dtos\\service\\serviceresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|c:\\users\\eliel.roberto\\desktop\\balta\\barberflow\\barberflow.application\\common\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|solutionrelative:barberflow.application\\common\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|c:\\users\\eliel.roberto\\desktop\\balta\\barberflow\\barberflow.application\\dtos\\service\\updateservicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|solutionrelative:barberflow.application\\dtos\\service\\updateservicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|c:\\users\\eliel.roberto\\desktop\\balta\\barberflow\\barberflow.application\\barberflow.application.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|solutionrelative:barberflow.application\\barberflow.application.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|c:\\users\\eliel.roberto\\desktop\\balta\\barberflow\\barberflow.application\\dtos\\serviceresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|solutionrelative:barberflow.application\\dtos\\serviceresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|c:\\users\\eliel.roberto\\desktop\\balta\\barberflow\\barberflow.application\\dtos\\createservicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|solutionrelative:barberflow.application\\dtos\\createservicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4FD69DF-F7EA-A214-9AB3-F48E98177E5C}|BarberFlow.API\\BarberFlow.API.csproj|c:\\users\\eliel.roberto\\desktop\\balta\\barberflow\\barberflow.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4FD69DF-F7EA-A214-9AB3-F48E98177E5C}|BarberFlow.API\\BarberFlow.API.csproj|solutionrelative:barberflow.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|c:\\users\\eliel.roberto\\desktop\\balta\\barberflow\\barberflow.application\\dtos\\service\\createservicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{584BEBB8-F931-6A5B-38F9-9C3F9DCCBD74}|BarberFlow.Application\\BarberFlow.Application.csproj|solutionrelative:barberflow.application\\dtos\\service\\createservicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4FD69DF-F7EA-A214-9AB3-F48E98177E5C}|BarberFlow.API\\BarberFlow.API.csproj|c:\\users\\eliel.roberto\\desktop\\balta\\barberflow\\barberflow.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -58,16 +94,133 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "BarberFlow.API\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "BarberFlow.API\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwCYAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T14:12:02.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "BarberFlow.Application\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\Services\\AuthService.cs",
+              "RelativeToolTip": "BarberFlow.Application\\Services\\AuthService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA2wCkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T14:05:36.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\Interfaces\\IAuthService.cs",
+              "RelativeDocumentMoniker": "BarberFlow.Application\\Interfaces\\IAuthService.cs",
+              "ToolTip": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\Interfaces\\IAuthService.cs",
+              "RelativeToolTip": "BarberFlow.Application\\Interfaces\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T13:59:07.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LoginDto.cs",
+              "DocumentMoniker": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\DTOs\\User\\LoginDto.cs",
+              "RelativeDocumentMoniker": "BarberFlow.Application\\DTOs\\User\\LoginDto.cs",
+              "ToolTip": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\DTOs\\User\\LoginDto.cs",
+              "RelativeToolTip": "BarberFlow.Application\\DTOs\\User\\LoginDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T13:57:46.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RegisterDto.cs",
+              "DocumentMoniker": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\DTOs\\User\\RegisterDto.cs",
+              "RelativeDocumentMoniker": "BarberFlow.Application\\DTOs\\User\\RegisterDto.cs",
+              "ToolTip": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\DTOs\\User\\RegisterDto.cs",
+              "RelativeToolTip": "BarberFlow.Application\\DTOs\\User\\RegisterDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T13:56:19.731Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Domain\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "BarberFlow.Domain\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Domain\\Entities\\User.cs",
+              "RelativeToolTip": "BarberFlow.Domain\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T13:50:00.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CreateServiceValidator.cs",
+              "DocumentMoniker": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\Validators\\CreateServiceValidator.cs",
+              "RelativeDocumentMoniker": "BarberFlow.Application\\Validators\\CreateServiceValidator.cs",
+              "ToolTip": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\Validators\\CreateServiceValidator.cs",
+              "RelativeToolTip": "BarberFlow.Application\\Validators\\CreateServiceValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T13:36:21.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BarberFlow.Application",
+              "DocumentMoniker": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\BarberFlow.Application.csproj",
+              "RelativeDocumentMoniker": "BarberFlow.Application\\BarberFlow.Application.csproj",
+              "ToolTip": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\BarberFlow.Application.csproj",
+              "RelativeToolTip": "BarberFlow.Application\\BarberFlow.Application.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-17T13:34:49.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ApiResponse.cs",
+              "DocumentMoniker": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\Common\\ApiResponse.cs",
+              "RelativeDocumentMoniker": "BarberFlow.Application\\Common\\ApiResponse.cs",
+              "ToolTip": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\Common\\ApiResponse.cs",
+              "RelativeToolTip": "BarberFlow.Application\\Common\\ApiResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T13:25:51.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "UpdateServiceDto.cs",
-              "DocumentMoniker": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\DTOs\\UpdateServiceDto.cs",
-              "RelativeDocumentMoniker": "BarberFlow.Application\\DTOs\\UpdateServiceDto.cs",
-              "ToolTip": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\DTOs\\UpdateServiceDto.cs",
-              "RelativeToolTip": "BarberFlow.Application\\DTOs\\UpdateServiceDto.cs",
+              "DocumentMoniker": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\DTOs\\Service\\UpdateServiceDto.cs",
+              "RelativeDocumentMoniker": "BarberFlow.Application\\DTOs\\Service\\UpdateServiceDto.cs",
+              "ToolTip": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\DTOs\\Service\\UpdateServiceDto.cs",
+              "RelativeToolTip": "BarberFlow.Application\\DTOs\\Service\\UpdateServiceDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-16T19:48:28.128Z",
@@ -75,12 +228,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 13,
               "Title": "ServiceResponseDto.cs",
-              "DocumentMoniker": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\DTOs\\ServiceResponseDto.cs",
-              "RelativeDocumentMoniker": "BarberFlow.Application\\DTOs\\ServiceResponseDto.cs",
-              "ToolTip": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\DTOs\\ServiceResponseDto.cs",
-              "RelativeToolTip": "BarberFlow.Application\\DTOs\\ServiceResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\DTOs\\Service\\ServiceResponseDto.cs",
+              "RelativeDocumentMoniker": "BarberFlow.Application\\DTOs\\Service\\ServiceResponseDto.cs",
+              "ToolTip": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\DTOs\\Service\\ServiceResponseDto.cs",
+              "RelativeToolTip": "BarberFlow.Application\\DTOs\\Service\\ServiceResponseDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-16T19:02:15.517Z",
@@ -88,7 +241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 18,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.API\\appsettings.json",
               "RelativeDocumentMoniker": "BarberFlow.API\\appsettings.json",
@@ -101,34 +254,34 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.API\\Program.cs",
               "RelativeDocumentMoniker": "BarberFlow.API\\Program.cs",
               "ToolTip": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.API\\Program.cs",
               "RelativeToolTip": "BarberFlow.API\\Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-16T17:29:19.718Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ServicesController.cs",
               "DocumentMoniker": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.API\\Controllers\\ServicesController.cs",
               "RelativeDocumentMoniker": "BarberFlow.API\\Controllers\\ServicesController.cs",
               "ToolTip": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.API\\Controllers\\ServicesController.cs",
               "RelativeToolTip": "BarberFlow.API\\Controllers\\ServicesController.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAA9wCIAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-16T17:20:37.202Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "BarberFlow.Infrastructure",
+              "DocumentIndex": 19,
+              "Title": "BarberFlow.Infrastructure.csproj",
               "DocumentMoniker": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Infrastructure\\BarberFlow.Infrastructure.csproj",
               "RelativeDocumentMoniker": "BarberFlow.Infrastructure\\BarberFlow.Infrastructure.csproj",
               "ToolTip": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Infrastructure\\BarberFlow.Infrastructure.csproj",
@@ -140,7 +293,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 16,
               "Title": "BarberFlow.Application",
               "DocumentMoniker": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\BarberFlow.Application.csproj",
               "RelativeDocumentMoniker": "BarberFlow.Application\\BarberFlow.Application.csproj",
@@ -152,51 +305,51 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Infrastructure\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "BarberFlow.Infrastructure\\Data\\AppDbContext.cs",
               "ToolTip": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Infrastructure\\Data\\AppDbContext.cs",
               "RelativeToolTip": "BarberFlow.Infrastructure\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-16T17:13:30.385Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "ServiceService.cs",
               "DocumentMoniker": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\Services\\ServiceService.cs",
               "RelativeDocumentMoniker": "BarberFlow.Application\\Services\\ServiceService.cs",
               "ToolTip": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\Services\\ServiceService.cs",
               "RelativeToolTip": "BarberFlow.Application\\Services\\ServiceService.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAIwEoAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAIwF8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-16T17:10:02.381Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "IServiceService.cs",
               "DocumentMoniker": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\Interfaces\\IServiceService.cs",
               "RelativeDocumentMoniker": "BarberFlow.Application\\Interfaces\\IServiceService.cs",
               "ToolTip": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\Interfaces\\IServiceService.cs",
               "RelativeToolTip": "BarberFlow.Application\\Interfaces\\IServiceService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA8AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-16T17:07:54.06Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 17,
               "Title": "CreateServiceDto.cs",
-              "DocumentMoniker": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\DTOs\\CreateServiceDto.cs",
-              "RelativeDocumentMoniker": "BarberFlow.Application\\DTOs\\CreateServiceDto.cs",
-              "ToolTip": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\DTOs\\CreateServiceDto.cs",
-              "RelativeToolTip": "BarberFlow.Application\\DTOs\\CreateServiceDto.cs",
+              "DocumentMoniker": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\DTOs\\Service\\CreateServiceDto.cs",
+              "RelativeDocumentMoniker": "BarberFlow.Application\\DTOs\\Service\\CreateServiceDto.cs",
+              "ToolTip": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Application\\DTOs\\Service\\CreateServiceDto.cs",
+              "RelativeToolTip": "BarberFlow.Application\\DTOs\\Service\\CreateServiceDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-16T17:05:55.507Z",
@@ -204,7 +357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 20,
               "Title": "Service.cs",
               "DocumentMoniker": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Domain\\Entities\\Service.cs",
               "RelativeDocumentMoniker": "BarberFlow.Domain\\Entities\\Service.cs",

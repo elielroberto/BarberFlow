@@ -15,3 +15,4 @@ C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Application\obj\Debug
 C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Application\obj\Debug\net8.0\refint\BarberFlow.Application.dll
 C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Application\obj\Debug\net8.0\BarberFlow.Application.pdb
 C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Application\obj\Debug\net8.0\ref\BarberFlow.Application.dll
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Application\obj\Debug\net8.0\BarberFlow.Application.sourcelink.json

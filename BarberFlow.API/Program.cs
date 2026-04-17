@@ -1,6 +1,9 @@
 using BarberFlow.Application.Interfaces;
 using BarberFlow.Application.Services;
+using BarberFlow.Application.Validators;
 using BarberFlow.Infrastructure.Data;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +21,13 @@ builder.Services.AddControllers();
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//FluentValidation
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddValidatorsFromAssemblyContaining<CreateServiceValidator>();
+
+//Login
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 var app = builder.Build();
 

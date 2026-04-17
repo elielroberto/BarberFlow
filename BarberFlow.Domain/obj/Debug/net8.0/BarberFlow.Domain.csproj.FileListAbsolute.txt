@@ -9,3 +9,4 @@ C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Domain\obj\Debug\net8
 C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Domain\obj\Debug\net8.0\refint\BarberFlow.Domain.dll
 C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Domain\obj\Debug\net8.0\BarberFlow.Domain.pdb
 C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Domain\obj\Debug\net8.0\ref\BarberFlow.Domain.dll
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Domain\obj\Debug\net8.0\BarberFlow.Domain.sourcelink.json

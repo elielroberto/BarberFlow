@@ -1,4 +1,4 @@
-﻿using BarberFlow.Application.DTOs;
+﻿using BarberFlow.Application.DTOs.Service;
 using BarberFlow.Application.Interfaces;
 using BarberFlow.Domain.Entities;
 using BarberFlow.Infrastructure.Data;
@@ -88,6 +88,21 @@ namespace BarberFlow.Application.Services
                 DurationInMinutes = service.DurationInMinutes,
                 Price = service.Price
             };
+        }
+
+        public async Task <bool> DesactivateAsync(Guid id)
+        {
+            var service = await _context.Services.FirstOrDefaultAsync(x => x.Id == id && x.IsActive);
+
+            if (service == null)
+            {
+                return false;
+            }
+            service.IsActive = false;
+
+             await _context.SaveChangesAsync();
+
+            return true;
         }
 
     }

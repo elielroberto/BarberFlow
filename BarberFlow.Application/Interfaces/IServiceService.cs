@@ -1,4 +1,4 @@
-﻿using BarberFlow.Application.DTOs;
+﻿using BarberFlow.Application.DTOs.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +13,6 @@ namespace BarberFlow.Application.Interfaces
         public Task<List<ServiceResponseDto>> GetAllAsync();
         public Task<ServiceResponseDto> GetByIdAsync(Guid id);
         public Task<ServiceResponseDto> UpdateAsync(Guid id, UpdateServiceDto dto);
+        public Task <bool> DesactivateAsync(Guid id);
     }
 }

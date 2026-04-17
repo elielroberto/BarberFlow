@@ -15,3 +15,4 @@ C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Infrastructure\obj\De
 C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Infrastructure\obj\Debug\net8.0\BarberFlow.Infrastructure.pdb
 C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Infrastructure\obj\Debug\net8.0\BarberFlow.Infrastructure.genruntimeconfig.cache
 C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Infrastructure\obj\Debug\net8.0\ref\BarberFlow.Infrastructure.dll
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Infrastructure\obj\Debug\net8.0\BarberFlow.Infrastructure.sourcelink.json

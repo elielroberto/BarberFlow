@@ -1,4 +1,4 @@
-﻿using BarberFlow.Application.DTOs;
+﻿using BarberFlow.Application.DTOs.Service;
 using BarberFlow.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,7 +18,11 @@ namespace BarberFlow.API.Controllers
         public async Task<IActionResult> Create(CreateServiceDto dto)
         {
             var id = await _service.CreateAsync(dto);
-            return Ok(new { id });
+
+            return CreatedAtAction(
+                nameof(GetById),
+                new { id = id },
+                new { id });
         }
 
         [HttpGet]
@@ -47,5 +51,18 @@ namespace BarberFlow.API.Controllers
 
             return Ok(service);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var result = await _service.DesactivateAsync(id);
+
+            if (!result)
+                return NotFound();
+
+            return NoContent();
+        }
+
+
     }
 }

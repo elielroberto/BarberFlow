@@ -150,3 +150,6 @@ C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Tests\obj\Debug\net8.
 C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Tests\obj\Debug\net8.0\BarberFlow.Tests.pdb
 C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Tests\obj\Debug\net8.0\BarberFlow.Tests.genruntimeconfig.cache
 C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Tests\obj\Debug\net8.0\ref\BarberFlow.Tests.dll
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Tests\obj\Debug\net8.0\BarberFlow.Tests.sourcelink.json
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Tests\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\eliel.roberto\Desktop\Balta\BarberFlow\BarberFlow.Tests\bin\Debug\net8.0\BCrypt.Net-Next.dll

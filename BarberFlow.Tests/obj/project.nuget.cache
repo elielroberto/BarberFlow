@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "AxHvPeZpmLI=",
+  "dgSpecHash": "EkrRTN7dc0A=",
   "success": true,
   "projectFilePath": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.Tests\\BarberFlow.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eliel.roberto\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\eliel.roberto\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+    "C:\\Users\\eliel.roberto\\.nuget\\packages\\bcrypt.net-next\\4.1.0\\bcrypt.net-next.4.1.0.nupkg.sha512",
     "C:\\Users\\eliel.roberto\\.nuget\\packages\\coverlet.collector\\6.0.4\\coverlet.collector.6.0.4.nupkg.sha512",
+    "C:\\Users\\eliel.roberto\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
     "C:\\Users\\eliel.roberto\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\eliel.roberto\\.nuget\\packages\\microsoft.codecoverage\\17.14.1\\microsoft.codecoverage.17.14.1.nupkg.sha512",
     "C:\\Users\\eliel.roberto\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

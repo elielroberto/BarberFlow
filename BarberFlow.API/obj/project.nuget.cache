@@ -1,12 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "GM8fil1Z0+Q=",
+  "dgSpecHash": "AWbzSuVnSSw=",
   "success": true,
   "projectFilePath": "C:\\Users\\eliel.roberto\\Desktop\\Balta\\BarberFlow\\BarberFlow.API\\BarberFlow.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eliel.roberto\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\eliel.roberto\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+    "C:\\Users\\eliel.roberto\\.nuget\\packages\\bcrypt.net-next\\4.1.0\\bcrypt.net-next.4.1.0.nupkg.sha512",
     "C:\\Users\\eliel.roberto\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
+    "C:\\Users\\eliel.roberto\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
+    "C:\\Users\\eliel.roberto\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.1\\fluentvalidation.aspnetcore.11.3.1.nupkg.sha512",
+    "C:\\Users\\eliel.roberto\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.11.0\\fluentvalidation.dependencyinjectionextensions.11.11.0.nupkg.sha512",
     "C:\\Users\\eliel.roberto\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\eliel.roberto\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.26\\microsoft.aspnetcore.authentication.jwtbearer.8.0.26.nupkg.sha512",
     "C:\\Users\\eliel.roberto\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

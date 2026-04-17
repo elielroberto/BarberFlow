@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BarberFlow.Application.DTOs
+namespace BarberFlow.Application.DTOs.Service
 {
     public class CreateServiceDto
     {

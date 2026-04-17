@@ -15,6 +15,7 @@ namespace BarberFlow.Infrastructure.Data
         {
         }
         public DbSet<Service> Services => Set<Service>();
+        public DbSet<User> Users => Set<User>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -32,6 +33,21 @@ namespace BarberFlow.Infrastructure.Data
                     .HasColumnType("decimal(18,2)");
 
                 entity.Property(x => x.DurationInMinutes)
+                    .IsRequired();
+            });
+
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.HasKey(x => x.Id);
+
+                entity.Property(x => x.Email)
+                    .IsRequired()
+                    .HasMaxLength(150);
+
+                entity.HasIndex(x => x.Email)
+                    .IsUnique();
+
+                entity.Property(x => x.PasswordHash)
                     .IsRequired();
             });
         }
