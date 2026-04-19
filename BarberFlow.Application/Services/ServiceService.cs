@@ -1,6 +1,8 @@
-﻿using BarberFlow.Application.DTOs.Service;
+﻿using BarberFlow.Application.DTOs.Appointment;
+using BarberFlow.Application.DTOs.Service;
 using BarberFlow.Application.Interfaces;
 using BarberFlow.Domain.Entities;
+using BarberFlow.Domain.Enums;
 using BarberFlow.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -26,7 +28,7 @@ namespace BarberFlow.Application.Services
             {
                 Id = Guid.NewGuid(),
                 Name = dto.Name,
-                DurationInMinutes = dto.DurationInMinutes,
+                SlotCount = dto.SlotCount,
                 Price = dto.Price,
                 IsActive = true
             };
@@ -44,7 +46,7 @@ namespace BarberFlow.Application.Services
                 {
                     Id = x.Id,
                     Name = x.Name,
-                    DurationInMinutes = x.DurationInMinutes,
+                    SlotCount = x.SlotCount,
                     Price = x.Price
                 });
 
@@ -59,7 +61,7 @@ namespace BarberFlow.Application.Services
                 {
                     Id = x.Id,
                     Name = x.Name,
-                    DurationInMinutes = x.DurationInMinutes,
+                    SlotCount = x.SlotCount,
                     Price = x.Price
                 })
                 .FirstOrDefaultAsync();
@@ -76,7 +78,7 @@ namespace BarberFlow.Application.Services
                 return null;
             }
             service.Name = dto.Name;
-            service.DurationInMinutes = dto.DurationInMinutes;
+            service.SlotCount = dto.SlotCount;
             service.Price = dto.Price;
 
             await _context.SaveChangesAsync();
@@ -85,7 +87,7 @@ namespace BarberFlow.Application.Services
             {
                 Id = service.Id,
                 Name = service.Name,
-                DurationInMinutes = service.DurationInMinutes,
+                SlotCount = service.SlotCount,
                 Price = service.Price
             };
         }

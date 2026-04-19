@@ -12,7 +12,7 @@ namespace BarberFlow.Domain.Entities
 
         public string Name { get; set; } = string.Empty;
 
-        public int DurationInMinutes { get; set; }
+        public int SlotCount { get; set; }
 
         public decimal Price { get; set; }
 

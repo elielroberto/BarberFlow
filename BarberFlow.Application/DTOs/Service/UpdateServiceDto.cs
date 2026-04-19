@@ -10,7 +10,7 @@ namespace BarberFlow.Application.DTOs.Service
     {
         public string Name { get; set; } = string.Empty;
 
-        public int DurationInMinutes { get; set; }
+        public int SlotCount { get; set; }
 
         public decimal Price { get; set; }
     }

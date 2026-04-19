@@ -16,6 +16,7 @@ namespace BarberFlow.Infrastructure.Data
         }
         public DbSet<Service> Services => Set<Service>();
         public DbSet<User> Users => Set<User>();
+        public DbSet<Appointment> Appointments => Set<Appointment>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -32,8 +33,8 @@ namespace BarberFlow.Infrastructure.Data
                 entity.Property(x => x.Price)
                     .HasColumnType("decimal(18,2)");
 
-                entity.Property(x => x.DurationInMinutes)
-                    .IsRequired();
+                entity.Property(x => x.SlotCount)
+                    .IsRequired().HasDefaultValue(1);
             });
 
             modelBuilder.Entity<User>(entity =>
@@ -49,6 +50,42 @@ namespace BarberFlow.Infrastructure.Data
 
                 entity.Property(x => x.PasswordHash)
                     .IsRequired();
+            });
+
+            modelBuilder.Entity<Appointment>(entity =>
+            {
+                entity.HasKey(x => x.Id);
+
+                entity.HasOne<Client>()
+                    .WithMany()
+                    .HasForeignKey(x => x.ClientId)
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne<Professional>()
+                    .WithMany()
+                    .HasForeignKey(x => x.ProfessionalId)
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne<Service>()
+                    .WithMany()
+                    .HasForeignKey(x => x.ServiceId)
+                    .OnDelete(DeleteBehavior.Restrict);
+
+                entity.Property(x => x.StartTime)
+                    .IsRequired();
+
+                entity.Property(x => x.EndTime)
+                    .IsRequired();
+
+                entity.Property(x => x.Status)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(x => x.CreatedAt)
+                    .IsRequired();
+
+                // Índice para performance (muito importante)
+                entity.HasIndex(x => new { x.ProfessionalId, x.StartTime, x.EndTime });
             });
         }
     }

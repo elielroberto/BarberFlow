@@ -14,7 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Registrar serviços
 builder.Services.AddScoped<IServiceService, ServiceService>();
-
+builder.Services.AddScoped<IAppointmentService, AppointmentService>();
 
 // DbContext
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer( builder.Configuration.GetConnectionString("DefaultConnection")));

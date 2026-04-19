@@ -14,7 +14,8 @@ namespace BarberFlow.Application.Validators
         {
             RuleFor(x => x.Name).NotEmpty().WithMessage("Nome é obrigatório").MaximumLength(100);
 
-            RuleFor(x => x.DurationInMinutes).GreaterThan(0).WithMessage("Duração deve ser maior que 0");
+            RuleFor(x => x.SlotCount).GreaterThan(0).WithMessage("Quantidade de slots deve ser maior que 0");
+            RuleFor(x => x.SlotCount).GreaterThan(0) .LessThanOrEqualTo(4).WithMessage("Serviço pode ter no máximo 4 slots");
 
             RuleFor(x => x.Price) .GreaterThan(0).WithMessage("Preço deve ser maior que 0");
         }
