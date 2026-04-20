@@ -9,9 +9,10 @@ namespace BarberFlow.Application.Interfaces
 {
     public interface IAppointmentService
     {
-        Task<bool> CreateAsync(CreateAppointmentDto dto);
+        Task<bool> CreateAsync(Guid userId, CreateAppointmentDto dto);
         Task<List<AvailableSlotDto>> GetAvailableSlotsAsync(Guid professionalId, DateTime date);
         Task<bool> CancelAsync(Guid appointmentId);
         Task<List<AppointmentResponseDto>> GetByDayAsync(Guid professionalId, DateTime date);
+        Task<List<AppointmentResponseDto>> GetMyAppointmentsAsync(Guid userId);
     }
 }

@@ -21,47 +21,50 @@ namespace BarberFlow.Application.Services
         {
             _context = context;
         }
-        public async Task<bool> CreateAsync(CreateAppointmentDto dto)
+        public async Task<bool> CreateAsync(Guid userId, CreateAppointmentDto dto)
         {
-            //  Buscar serviço
+            const int SLOT_DURATION = 30;
+
+            var client = await _context.Clients
+                .FirstOrDefaultAsync(x => x.UserId == userId);
+
+            if (client == null)
+                return false;
+
             var service = await _context.Services
                 .FirstOrDefaultAsync(x => x.Id == dto.ServiceId && x.IsActive);
 
             if (service == null)
                 return false;
 
-            // Não permitir passado
             if (dto.StartTime < DateTime.UtcNow)
                 return false;
 
-            //  Gerar slots necessários
+            if (dto.StartTime.Minute % SLOT_DURATION != 0 || dto.StartTime.Second != 0)
+                return false;
+
             var requiredSlots = service.SlotCount;
 
             var slots = Enumerable.Range(0, requiredSlots)
                 .Select(i => dto.StartTime.AddMinutes(i * SLOT_DURATION))
                 .ToList();
 
-            //  Validar conflito
             var hasConflict = await _context.Appointments
                 .AnyAsync(x =>
                     x.ProfessionalId == dto.ProfessionalId &&
                     x.Status == AppointmentStatus.Scheduled &&
-                    slots.Any(slot =>
-                        slot >= x.StartTime && slot < x.EndTime
-                    )
+                    slots.Any(slot => slot >= x.StartTime && slot < x.EndTime)
                 );
 
             if (hasConflict)
                 return false;
 
-            //  Calcular EndTime baseado nos slots
             var endTime = dto.StartTime.AddMinutes(requiredSlots * SLOT_DURATION);
 
-            //  Criar agendamento
             var appointment = new Appointment
             {
                 Id = Guid.NewGuid(),
-                ClientId = dto.ClientId,
+                ClientId = client.Id,
                 ProfessionalId = dto.ProfessionalId,
                 ServiceId = dto.ServiceId,
                 StartTime = dto.StartTime,
@@ -156,9 +159,38 @@ namespace BarberFlow.Application.Services
                     ProfessionalId = x.ProfessionalId,
                     StartTime = x.StartTime,
                     EndTime = x.EndTime,
-                    Status = x.Status
+                    Status = x.Status.ToString()
                 })
                 .ToListAsync();
+        }
+
+        public async Task<List<AppointmentResponseDto>> GetMyAppointmentsAsync(Guid userId)
+        {
+            var client = await _context.Clients
+                .FirstOrDefaultAsync(x => x.UserId == userId);
+
+            if (client == null)
+                return new List<AppointmentResponseDto>();
+
+            var appointments = await _context.Appointments
+                .Where(x => x.ClientId == client.Id)
+                .Include(x => x.Client)
+                .Include(x => x.Professional)
+                .Include(x => x.Service)
+                .OrderByDescending(x => x.StartTime)
+                .Select(x => new AppointmentResponseDto
+                {
+                    Id = x.Id,
+                    ClientName = x.Client.Name,
+                    ProfessionalName = x.Professional.Name,
+                    ServiceName = x.Service.Name,
+                    StartTime = x.StartTime,
+                    EndTime = x.EndTime,
+                    Status = x.Status.ToString()
+                })
+                .ToListAsync();
+
+            return appointments;
         }
 
     }

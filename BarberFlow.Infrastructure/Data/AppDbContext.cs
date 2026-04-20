@@ -16,6 +16,8 @@ namespace BarberFlow.Infrastructure.Data
         }
         public DbSet<Service> Services => Set<Service>();
         public DbSet<User> Users => Set<User>();
+        public DbSet<Client> Clients => Set<Client>();
+        public DbSet<Professional> Professionals => Set<Professional>();
         public DbSet<Appointment> Appointments => Set<Appointment>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -86,6 +88,49 @@ namespace BarberFlow.Infrastructure.Data
 
                 // Índice para performance (muito importante)
                 entity.HasIndex(x => new { x.ProfessionalId, x.StartTime, x.EndTime });
+            });
+
+            modelBuilder.Entity<Client>(entity =>
+            {
+                entity.HasKey(x => x.Id);
+
+                entity.Property(x => x.Name)
+                    .IsRequired()
+                    .HasMaxLength(150);
+
+                entity.Property(x => x.Phone)
+                    .HasMaxLength(20);
+
+                entity.Property(x => x.UserId)
+                    .IsRequired();
+
+                entity.HasIndex(x => x.UserId)
+                    .IsUnique(); 
+
+                entity.HasOne<User>()
+                    .WithOne()
+                    .HasForeignKey<Client>(x => x.UserId)
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            modelBuilder.Entity<Professional>(entity =>
+            {
+                entity.HasKey(x => x.Id);
+
+                entity.Property(x => x.Name)
+                    .IsRequired()
+                    .HasMaxLength(150);
+
+                entity.Property(x => x.UserId)
+                    .IsRequired();
+
+                entity.HasIndex(x => x.UserId)
+                    .IsUnique(); 
+
+                entity.HasOne<User>()
+                    .WithOne()
+                    .HasForeignKey<Professional>(x => x.UserId)
+                    .OnDelete(DeleteBehavior.Restrict);
             });
         }
     }

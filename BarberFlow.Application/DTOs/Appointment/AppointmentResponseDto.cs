@@ -14,6 +14,6 @@ namespace BarberFlow.Application.DTOs.Appointment
         public Guid ProfessionalId { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
-        public AppointmentStatus Status { get; set; }
+        public string Status { get; set; } = string.Empty;
     }
 }
