@@ -1,4 +1,5 @@
 ﻿using BarberFlow.Application.DTOs.Appointment;
+using BarberFlow.Application.DTOs.BlockedTime;
 using BarberFlow.Application.Interfaces;
 using BarberFlow.Application.Services;
 using BarberFlow.Domain.Entities;
@@ -90,5 +91,40 @@ namespace BarberFlow.API.Controllers
 
         return Ok(result);
     }
-}
+
+
+    [Authorize(Roles = "Professional")]
+    [HttpGet("barber/me")]
+    public async Task<IActionResult> GetMySchedule()
+    {
+        var userIdClaim = User.FindFirst("userId")?.Value;
+
+        if (string.IsNullOrWhiteSpace(userIdClaim))
+            return Unauthorized("Usuário não identificado.");
+
+        if (!Guid.TryParse(userIdClaim, out var userId))
+            return Unauthorized("Token inválido.");
+
+        var result = await _appointmentService.GetMyScheduleAsync(userId);
+
+        return Ok(result);
+    }
+
+        [Authorize(Roles = "Barber")]
+        [HttpPost("block")]
+        public async Task<IActionResult> BlockTime(CreateBlockedTimeDto dto)
+        {
+            var userIdClaim = User.FindFirst("userId")?.Value;
+
+            if (!Guid.TryParse(userIdClaim, out var userId))
+                return Unauthorized();
+
+            var result = await _appointmentService.CreateBlockedTimeAsync(userId, dto);
+
+            if (!result)
+                return BadRequest("Não foi possível bloquear horário");
+
+            return Ok("Horário bloqueado");
+        }
+    }
 }

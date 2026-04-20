@@ -19,6 +19,7 @@ namespace BarberFlow.Infrastructure.Data
         public DbSet<Client> Clients => Set<Client>();
         public DbSet<Professional> Professionals => Set<Professional>();
         public DbSet<Appointment> Appointments => Set<Appointment>();
+        public DbSet<BlockedTime> BlockedTimes => Set<BlockedTime>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -56,35 +57,25 @@ namespace BarberFlow.Infrastructure.Data
 
             modelBuilder.Entity<Appointment>(entity =>
             {
-                entity.HasKey(x => x.Id);
+                modelBuilder.Entity<Appointment>(entity =>
+                {
+                    entity.HasKey(x => x.Id);
 
-                entity.HasOne<Client>()
-                    .WithMany()
-                    .HasForeignKey(x => x.ClientId)
-                    .OnDelete(DeleteBehavior.Restrict);
+                    entity.HasOne(x => x.Client)
+                        .WithMany()
+                        .HasForeignKey(x => x.ClientId)
+                        .OnDelete(DeleteBehavior.Restrict);
 
-                entity.HasOne<Professional>()
-                    .WithMany()
-                    .HasForeignKey(x => x.ProfessionalId)
-                    .OnDelete(DeleteBehavior.Restrict);
+                    entity.HasOne(x => x.Professional)
+                        .WithMany()
+                        .HasForeignKey(x => x.ProfessionalId)
+                        .OnDelete(DeleteBehavior.Restrict);
 
-                entity.HasOne<Service>()
-                    .WithMany()
-                    .HasForeignKey(x => x.ServiceId)
-                    .OnDelete(DeleteBehavior.Restrict);
-
-                entity.Property(x => x.StartTime)
-                    .IsRequired();
-
-                entity.Property(x => x.EndTime)
-                    .IsRequired();
-
-                entity.Property(x => x.Status)
-                    .IsRequired()
-                    .HasMaxLength(50);
-
-                entity.Property(x => x.CreatedAt)
-                    .IsRequired();
+                    entity.HasOne(x => x.Service)
+                        .WithMany()
+                        .HasForeignKey(x => x.ServiceId)
+                        .OnDelete(DeleteBehavior.Restrict);
+                });
 
                 // Índice para performance (muito importante)
                 entity.HasIndex(x => new { x.ProfessionalId, x.StartTime, x.EndTime });
@@ -130,6 +121,19 @@ namespace BarberFlow.Infrastructure.Data
                 entity.HasOne<User>()
                     .WithOne()
                     .HasForeignKey<Professional>(x => x.UserId)
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            modelBuilder.Entity<BlockedTime>(entity =>
+            {
+                entity.HasKey(x => x.Id);
+
+                entity.Property(x => x.Start).IsRequired();
+                entity.Property(x => x.End).IsRequired();
+
+                entity.HasOne(x => x.Professional)
+                    .WithMany()
+                    .HasForeignKey(x => x.ProfessionalId)
                     .OnDelete(DeleteBehavior.Restrict);
             });
         }

@@ -26,7 +26,7 @@ namespace BarberFlow.Application.Services
             {
             new Claim("userId", user.Id.ToString()),
             new Claim(ClaimTypes.Email, user.Email),
-            new Claim(ClaimTypes.Role, user.Role)
+            new Claim(ClaimTypes.Role, user.Role.ToString())
         };
 
             var credentials = new SigningCredentials(

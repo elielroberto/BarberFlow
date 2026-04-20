@@ -1,6 +1,7 @@
 ﻿using BarberFlow.Application.DTOs.User;
 using BarberFlow.Application.Interfaces;
 using BarberFlow.Domain.Entities;
+using BarberFlow.Domain.Enums;
 using BarberFlow.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -32,10 +33,21 @@ namespace BarberFlow.Application.Services
             {
                 Id = Guid.NewGuid(),
                 Email = dto.Email,
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password)
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password),
+                Role = UserRole.Client
             };
 
             _context.Users.Add(user);
+
+            var client = new Client
+            {
+                Id = Guid.NewGuid(),
+                Name = dto.Email, 
+                Phone = "",
+                UserId = user.Id
+            };
+
+            _context.Clients.Add(client);
             await _context.SaveChangesAsync();
 
             return true;
@@ -56,6 +68,8 @@ namespace BarberFlow.Application.Services
             return _tokenService.GenerateToken(user);
 
         }
+
+        
 
     }
 }

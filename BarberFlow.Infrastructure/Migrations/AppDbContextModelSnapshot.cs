@@ -47,7 +47,6 @@ namespace BarberFlow.Infrastructure.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Status")
-                        .HasMaxLength(50)
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -152,9 +151,8 @@ namespace BarberFlow.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -166,23 +164,29 @@ namespace BarberFlow.Infrastructure.Migrations
 
             modelBuilder.Entity("BarberFlow.Domain.Entities.Appointment", b =>
                 {
-                    b.HasOne("BarberFlow.Domain.Entities.Client", null)
+                    b.HasOne("BarberFlow.Domain.Entities.Client", "Client")
                         .WithMany()
                         .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("BarberFlow.Domain.Entities.Professional", null)
+                    b.HasOne("BarberFlow.Domain.Entities.Professional", "Professional")
                         .WithMany()
                         .HasForeignKey("ProfessionalId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("BarberFlow.Domain.Entities.Service", null)
+                    b.HasOne("BarberFlow.Domain.Entities.Service", "Service")
                         .WithMany()
                         .HasForeignKey("ServiceId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("Client");
+
+                    b.Navigation("Professional");
+
+                    b.Navigation("Service");
                 });
 
             modelBuilder.Entity("BarberFlow.Domain.Entities.Client", b =>

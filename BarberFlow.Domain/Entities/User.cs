@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BarberFlow.Domain.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,6 @@ namespace BarberFlow.Domain.Entities
 
         public string PasswordHash { get; set; } = string.Empty;
 
-        public string Role { get; set; } = "User";
+        public UserRole Role { get; set; }  = UserRole.Client;
     }
 }

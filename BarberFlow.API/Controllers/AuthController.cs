@@ -39,5 +39,7 @@ namespace BarberFlow.API.Controllers
             return Ok(new {token});
         }
 
+
+
     }
 }

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BarberFlow.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260419202816_update")]
-    partial class update
+    [Migration("20260420125609_Update")]
+    partial class Update
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,7 +50,6 @@ namespace BarberFlow.Infrastructure.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Status")
-                        .HasMaxLength(50)
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -72,18 +71,23 @@ namespace BarberFlow.Infrastructure.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<string>("Phone")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Client");
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("Clients");
                 });
 
             modelBuilder.Entity("BarberFlow.Domain.Entities.Professional", b =>
@@ -94,14 +98,18 @@ namespace BarberFlow.Infrastructure.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Professional");
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("Professionals");
                 });
 
             modelBuilder.Entity("BarberFlow.Domain.Entities.Service", b =>
@@ -146,9 +154,8 @@ namespace BarberFlow.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -160,21 +167,45 @@ namespace BarberFlow.Infrastructure.Migrations
 
             modelBuilder.Entity("BarberFlow.Domain.Entities.Appointment", b =>
                 {
-                    b.HasOne("BarberFlow.Domain.Entities.Client", null)
+                    b.HasOne("BarberFlow.Domain.Entities.Client", "Client")
                         .WithMany()
                         .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("BarberFlow.Domain.Entities.Professional", null)
+                    b.HasOne("BarberFlow.Domain.Entities.Professional", "Professional")
                         .WithMany()
                         .HasForeignKey("ProfessionalId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("BarberFlow.Domain.Entities.Service", null)
+                    b.HasOne("BarberFlow.Domain.Entities.Service", "Service")
                         .WithMany()
                         .HasForeignKey("ServiceId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Client");
+
+                    b.Navigation("Professional");
+
+                    b.Navigation("Service");
+                });
+
+            modelBuilder.Entity("BarberFlow.Domain.Entities.Client", b =>
+                {
+                    b.HasOne("BarberFlow.Domain.Entities.User", null)
+                        .WithOne()
+                        .HasForeignKey("BarberFlow.Domain.Entities.Client", "UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("BarberFlow.Domain.Entities.Professional", b =>
+                {
+                    b.HasOne("BarberFlow.Domain.Entities.User", null)
+                        .WithOne()
+                        .HasForeignKey("BarberFlow.Domain.Entities.Professional", "UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });

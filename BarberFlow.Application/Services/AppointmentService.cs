@@ -1,4 +1,5 @@
 ﻿using BarberFlow.Application.DTOs.Appointment;
+using BarberFlow.Application.DTOs.BlockedTime;
 using BarberFlow.Application.Interfaces;
 using BarberFlow.Domain.Entities;
 using BarberFlow.Domain.Enums;
@@ -37,30 +38,57 @@ namespace BarberFlow.Application.Services
             if (service == null)
                 return false;
 
-            if (dto.StartTime < DateTime.UtcNow)
+            //  valida tempo
+            var now = DateTime.Now;
+            now = new DateTime(now.Year, now.Month, now.Day, now.Hour, now.Minute, 0);
+
+            if (dto.StartTime < now)
                 return false;
 
             if (dto.StartTime.Minute % SLOT_DURATION != 0 || dto.StartTime.Second != 0)
                 return false;
 
+            dto.StartTime = new DateTime(
+                dto.StartTime.Year,
+                dto.StartTime.Month,
+                dto.StartTime.Day,
+                dto.StartTime.Hour,
+                dto.StartTime.Minute,
+                0
+            );
+
             var requiredSlots = service.SlotCount;
 
-            var slots = Enumerable.Range(0, requiredSlots)
-                .Select(i => dto.StartTime.AddMinutes(i * SLOT_DURATION))
-                .ToList();
+            //  calcula UMA vez
+            var endTime = dto.StartTime.AddMinutes(requiredSlots * SLOT_DURATION);
 
-            var hasConflict = await _context.Appointments
-                .AnyAsync(x =>
-                    x.ProfessionalId == dto.ProfessionalId &&
-                    x.Status == AppointmentStatus.Scheduled &&
-                    slots.Any(slot => slot >= x.StartTime && slot < x.EndTime)
-                );
+            //  CONFLICTO COM APPOINTMENTS
+            var appointments = await _context.Appointments
+                .Where(a => a.ProfessionalId == dto.ProfessionalId)
+                .ToListAsync();
+
+            var hasConflict = appointments.Any(a =>
+                dto.StartTime < a.EndTime &&
+                endTime > a.StartTime
+            );
 
             if (hasConflict)
                 return false;
 
-            var endTime = dto.StartTime.AddMinutes(requiredSlots * SLOT_DURATION);
+            //  CONFLICTO COM BLOCKEDTIME
+            var blockedTimes = await _context.BlockedTimes
+                .Where(b => b.ProfessionalId == dto.ProfessionalId)
+                .ToListAsync();
 
+            var hasBlockedConflict = blockedTimes.Any(b =>
+                dto.StartTime < b.End &&
+                endTime > b.Start
+            );
+
+            if (hasBlockedConflict)
+                return false;
+
+            //  cria agendamento
             var appointment = new Appointment
             {
                 Id = Guid.NewGuid(),
@@ -149,16 +177,18 @@ namespace BarberFlow.Application.Services
             return await _context.Appointments
                 .Where(x =>
                     x.ProfessionalId == professionalId &&
-                    x.StartTime.Date == date.Date
+                    x.StartTime.Date == date.Date &&
+                    x.Status == AppointmentStatus.Scheduled
                 )
                 .OrderBy(x => x.StartTime)
                 .Select(x => new AppointmentResponseDto
                 {
                     Id = x.Id,
-                    ClientId = x.ClientId,
-                    ProfessionalId = x.ProfessionalId,
-                    StartTime = x.StartTime,
-                    EndTime = x.EndTime,
+                    ClientName = x.Client.Name,
+                    ProfessionalName = x.Professional.Name,
+                    ServiceName = x.Service.Name,
+                    StartTime = x.StartTime.ToString("yyyy-MM-ddTHH:mm"),
+                    EndTime = x.EndTime.ToString("yyyy-MM-ddTHH:mm"),
                     Status = x.Status.ToString()
                 })
                 .ToListAsync();
@@ -184,13 +214,71 @@ namespace BarberFlow.Application.Services
                     ClientName = x.Client.Name,
                     ProfessionalName = x.Professional.Name,
                     ServiceName = x.Service.Name,
-                    StartTime = x.StartTime,
-                    EndTime = x.EndTime,
+                    StartTime = x.StartTime.ToString("yyyy-MM-ddTHH:mm"),
+                    EndTime = x.EndTime.ToString("yyyy-MM-ddTHH:mm"),
                     Status = x.Status.ToString()
                 })
                 .ToListAsync();
 
             return appointments;
+        }
+
+        public async Task<List<AppointmentResponseDto>> GetMyScheduleAsync(Guid userId)
+        {
+            //  Buscar o Professional pelo UserId
+            var professional = await _context.Professionals
+                .FirstOrDefaultAsync(x => x.UserId == userId);
+
+            if (professional == null)
+                return new List<AppointmentResponseDto>();
+
+            //  Buscar agenda dele
+            var appointments = await _context.Appointments
+                .Where(x =>
+                    x.ProfessionalId == professional.Id &&
+                    x.Status == AppointmentStatus.Scheduled
+                )
+                .OrderBy(x => x.StartTime)
+                .Select(x => new AppointmentResponseDto
+                {
+                    Id = x.Id,
+                    ClientName = x.Client.Name,
+                    ProfessionalName = x.Professional.Name,
+                    ServiceName = x.Service.Name,
+                    StartTime = x.StartTime.ToString("yyyy-MM-ddTHH:mm"),
+                    EndTime = x.EndTime.ToString("yyyy-MM-ddTHH:mm"),
+                    Status = x.Status.ToString()
+                })
+                .ToListAsync();
+
+            return appointments;
+        }
+
+        public async Task<bool> CreateBlockedTimeAsync(Guid userId, CreateBlockedTimeDto dto)
+        {
+            var professional = await _context.Professionals
+                .FirstOrDefaultAsync(x => x.UserId == userId);
+
+            if (professional == null)
+                return false;
+
+            if (dto.End <= dto.Start)
+                return false;
+
+            var blocked = new BlockedTime
+            {
+                Id = Guid.NewGuid(),
+                ProfessionalId = professional.Id,
+                Start = dto.Start,
+                End = dto.End,
+                Reason = dto.Reason,
+                CreatedAt = DateTime.UtcNow
+            };
+
+            _context.BlockedTimes.Add(blocked);
+            await _context.SaveChangesAsync();
+
+            return true;
         }
 
     }

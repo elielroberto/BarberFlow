@@ -10,10 +10,11 @@ namespace BarberFlow.Application.DTOs.Appointment
     public class AppointmentResponseDto
     {
         public Guid Id { get; set; }
-        public Guid ClientId { get; set; }
-        public Guid ProfessionalId { get; set; }
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+        public string ClientName { get; set; } = string.Empty;
+        public string ProfessionalName { get; set; } = string.Empty;
+        public string ServiceName { get; set; } = string.Empty;
+        public string StartTime { get; set; } = string.Empty;
+        public string EndTime { get; set; } = string.Empty;
         public string Status { get; set; } = string.Empty;
     }
 }
