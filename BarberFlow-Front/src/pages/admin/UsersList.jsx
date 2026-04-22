@@ -4,9 +4,15 @@ import { getUsers, updateUserRole } from "../../services/user.service";
 export default function UsersList() {
   const [users, setUsers] = useState([]);
 
+const roleToNumber = {
+  Client: 0,
+  Professional: 1,
+  Admin: 2,
+};
   const loadUsers = async () => {
     try {
       const response = await getUsers();
+       console.log(response.data);
       setUsers(response.data);
     } catch {
       alert("Erro ao carregar usuários");
@@ -22,7 +28,6 @@ export default function UsersList() {
 
   try {
     await updateUserRole(userId, newRole);
-    console.log(response.data);
     setUsers((prev) =>
       prev.map((u) =>
         u.id === userId ? { ...u, role: Number(newRole) } : u
@@ -57,16 +62,16 @@ export default function UsersList() {
             </div>
 
             <select
-              value={user.role}
-              onChange={(e) =>
-                handleRoleChange(user.id, e.target.value)
-              }
-              className="bg-zinc-800 text-white p-2 rounded border border-zinc-600"
+            value={typeof user.role === "string" ? roleToNumber[user.role] : user.role}
+            onChange={(e) =>
+              handleRoleChange(user.id, e.target.value)
+            }
+            className="bg-zinc-800 text-white p-2 rounded border border-zinc-600"
             >
-              <option value={0}>Client</option>
-              <option value={1}>Professional</option>
-              <option value={2}>Admin</option>
-            </select>
+            <option value={0}>Client</option>
+            <option value={1}>Professional</option>
+            <option value={2}>Admin</option>
+          </select>
           </div>
         ))}
 

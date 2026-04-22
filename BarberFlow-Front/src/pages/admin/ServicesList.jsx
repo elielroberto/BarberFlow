@@ -1,9 +1,24 @@
 import { useEffect, useState } from "react";
 import { getServices } from "../../services/service.service";
+import { deleteService } from "../../services/service.service";
 
 export default function ServicesList() {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
+
+const handleDelete = async (id) => {
+  if (!confirm("Tem certeza que deseja remover o serviço?")) return;
+
+  try {
+    await deleteService(id);
+    
+    setServices((prev) =>
+    prev.filter((service) => service.id !== id));
+
+  } catch {
+    alert("Erro ao deletar serviço");
+  }
+};
 
   const loadServices = async () => {
     try {
@@ -24,7 +39,7 @@ export default function ServicesList() {
     <div className="min-h-screen bg-black text-white p-8">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-between mb-8">
-                    {/* 🔙 BOTÃO VOLTAR */}
+        {/*  BOTÃO VOLTAR */}
         <button
           onClick={() => window.history.back()}
           className="text-yellow-500 mb-6 hover:underline flex items-center gap-2"
@@ -62,7 +77,7 @@ export default function ServicesList() {
 
                 <div className="space-y-2 text-zinc-300">
                   <p>
-                    <span className="text-zinc-500">Slots:</span>{" "}
+                    <span className="text-zinc-500">Slots de Horários:</span>{" "}
                     {service.slotCount}
                   </p>
 
@@ -78,11 +93,18 @@ export default function ServicesList() {
                 </div>
 
                 <div className="mt-5 flex gap-3">
-                  <button className="flex-1 bg-zinc-800 hover:bg-zinc-700 text-white py-2 rounded transition">
-                    Editar
-                  </button>
+                <button
+                  onClick={() =>
+                    window.location.href = `/admin/services/edit/${service.id}`
+                  }
+                  className="text-yellow-500 hover:underline"
+                >
+                  Editar
+                </button>
 
-                  <button className="flex-1 bg-red-600 hover:bg-red-700 text-white py-2 rounded transition">
+                  <button
+                   onClick={() => handleDelete(service.id)} 
+                  className="flex-1 bg-red-600 hover:bg-red-700 text-white py-2 rounded transition">
                     Excluir
                   </button>
                 </div>

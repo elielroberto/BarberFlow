@@ -7,3 +7,15 @@ export const createService = async (data) => {
 export const getServices = async () => {
   return await api.get("/services");
 };
+
+export const deleteService = async (serviceId) => {
+  return await api.delete(`/services/${serviceId}`);  
+};
+
+export const getServiceById = async (id) => {
+  return await api.get(`/services/${id}`);
+};
+
+export const updateService = async (id, data) => {
+  return await api.put(`/services/${id}`, data);
+};

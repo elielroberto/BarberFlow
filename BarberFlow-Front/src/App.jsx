@@ -7,6 +7,7 @@ import CreateService from "./pages/admin/CreateService";
 import ServicesList from "./pages/admin/ServicesList";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import UsersList from "./pages/admin/UsersList";
+import EditService from "./pages/admin/EditService";
 
 // páginas exemplo
 function Dashboard() {
@@ -85,6 +86,16 @@ function App() {
           </PrivateRoute>
         }
       />
+
+      <Route
+        path="/admin/services/edit/:id"
+        element={
+          <PrivateRoute allowedRoles={["Admin"]}>
+            <EditService />
+          </PrivateRoute>
+        }
+      />
+
     </Routes>
     </BrowserRouter>
   );
