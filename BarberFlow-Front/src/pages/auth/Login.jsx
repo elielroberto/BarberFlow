@@ -21,7 +21,7 @@ export default function Login() {
       alert("Login realizado!");
       if (user.role === "Admin") {
       window.location.href = "/admin";
-      } else if (user.role === "professional") {
+      } else if (user.role === "Professional") {
       window.location.href = "/barber";
       } else {
       window.location.href = "/dashboard";

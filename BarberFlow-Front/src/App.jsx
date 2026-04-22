@@ -8,6 +8,8 @@ import ServicesList from "./pages/admin/ServicesList";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import UsersList from "./pages/admin/UsersList";
 import EditService from "./pages/admin/EditService";
+import BarberDashboard from "./pages/barber/BarberDashboard";
+
 
 // páginas exemplo
 function Dashboard() {
@@ -16,10 +18,6 @@ function Dashboard() {
 
 function Admin() {
   return <h1 className="text-white">Admin</h1>;
-}
-
-function Barber() {
-  return <h1 className="text-white">Barber</h1>;
 }
 
 function App() {
@@ -47,16 +45,6 @@ function App() {
           element={
             <PrivateRoute allowedRoles={["Admin"]}>
               <AdminDashboard />
-            </PrivateRoute>
-          }
-        />
-
-        {/* barber */}
-        <Route
-          path="/barber"
-          element={
-            <PrivateRoute allowedRoles={["Professional"]}>
-              <Barber />
             </PrivateRoute>
           }
         />
@@ -92,6 +80,15 @@ function App() {
         element={
           <PrivateRoute allowedRoles={["Admin"]}>
             <EditService />
+          </PrivateRoute>
+        }
+      />
+
+      <Route
+        path="/barber"
+        element={
+          <PrivateRoute allowedRoles={["Professional"]}>
+            <BarberDashboard />
           </PrivateRoute>
         }
       />
