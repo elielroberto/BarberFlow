@@ -138,8 +138,7 @@ namespace BarberFlow.Application.Services
                 .Where(x =>
                     x.ProfessionalId == professionalId &&
                     x.Start.Date == date.Date
-                )l
-                .ToListAsync();
+                ).ToListAsync();
 
             // RESULTADO
 

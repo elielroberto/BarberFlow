@@ -1,18 +1,13 @@
 ﻿using BarberFlow.Application.DTOs.Service;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BarberFlow.Application.Interfaces
 {
     public interface IServiceService
     {
-        public Task<Guid> CreateAsync(CreateServiceDto dto);
-        public Task<List<ServiceResponseDto>> GetAllAsync();
-        public Task<ServiceResponseDto> GetByIdAsync(Guid id);
-        public Task<ServiceResponseDto> UpdateAsync(Guid id, UpdateServiceDto dto);
-        public Task <bool> DesactivateAsync(Guid id);
+        Task<Guid> CreateAsync(CreateServiceDto dto);
+        Task<List<ServiceResponseDto>> GetAllAsync();
+        Task<ServiceResponseDto?> GetByIdAsync(Guid id);
+        Task<ServiceResponseDto?> UpdateAsync(Guid id, UpdateServiceDto dto);
+        Task<bool> DesactivateAsync(Guid id);
     }
 }

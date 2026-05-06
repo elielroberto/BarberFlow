@@ -61,8 +61,6 @@ namespace BarberFlow.Infrastructure.Data
 
             modelBuilder.Entity<Appointment>(entity =>
             {
-                modelBuilder.Entity<Appointment>(entity =>
-                {
                     entity.HasKey(x => x.Id);
 
                     entity.HasOne(x => x.Client)
@@ -79,7 +77,6 @@ namespace BarberFlow.Infrastructure.Data
                         .WithMany()
                         .HasForeignKey(x => x.ServiceId)
                         .OnDelete(DeleteBehavior.Restrict);
-                });
 
                 // Índice para performance (muito importante)
                 entity.HasIndex(x => new { x.ProfessionalId, x.StartTime, x.EndTime });

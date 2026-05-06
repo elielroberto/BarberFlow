@@ -1,7 +1,5 @@
-﻿using BarberFlow.Application.DTOs.Appointment;
-using BarberFlow.Application.DTOs.Service;
+﻿using BarberFlow.Application.DTOs.Service;
 using BarberFlow.Application.Interfaces;
-using BarberFlow.Application.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,11 +10,9 @@ namespace BarberFlow.API.Controllers
     public class ServicesController : ControllerBase
     {
         private readonly IServiceService _service;
-        private readonly IAppointmentService _appointmentService;
-        public ServicesController(IServiceService service, IAppointmentService appointmentService)
+        public ServicesController(IServiceService service)
         {
             _service = service;
-            _appointmentService = appointmentService;
         }
 
         [Authorize]

@@ -54,7 +54,7 @@ namespace BarberFlow.Application.Services
             return true;
         }
 
-        public async Task<string> LoginAsync(LoginDto dto)
+        public async Task<string?> LoginAsync(LoginDto dto)
         {
             var user = await _context.Users.FirstOrDefaultAsync(x => x.Email == dto.Email);
 
@@ -67,10 +67,9 @@ namespace BarberFlow.Application.Services
                 return null;
 
             return _tokenService.GenerateToken(user);
-
         }
 
-        
+
 
     }
 }

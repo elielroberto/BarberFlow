@@ -1,6 +1,5 @@
 ﻿using BarberFlow.Application.DTOs.User;
 using BarberFlow.Application.Interfaces;
-using BarberFlow.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
 
