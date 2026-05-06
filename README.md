@@ -25,7 +25,7 @@ O projeto foi criado com o objetivo de evoluir conhecimentos em:
 
 #  Funcionalidades
 
-## 👤 Cliente
+##  Cliente
 - Cadastro e login
 - Autenticação JWT
 - Escolha de serviços
@@ -37,7 +37,7 @@ O projeto foi criado com o objetivo de evoluir conhecimentos em:
 
 ---
 
-## ✂️ Profissional (Barbeiro)
+##  Profissional (Barbeiro)
 - Visualização da agenda diária
 - Horários ocupados e livres
 - Visualização de informações do cliente
@@ -100,7 +100,9 @@ Tailwind CSS
 Axios
 React Router DOM
 
-🗂️ Estrutura do Projeto
+ 
+## Estrutura do Projeto
+
 Backend
 Controllers
 Services
