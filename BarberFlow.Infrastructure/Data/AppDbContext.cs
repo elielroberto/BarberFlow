@@ -48,6 +48,10 @@ namespace BarberFlow.Infrastructure.Data
                     .IsRequired()
                     .HasMaxLength(150);
 
+                entity.Property(x => x.Name)
+                    .IsRequired()
+                    .HasMaxLength(150);
+
                 entity.HasIndex(x => x.Email)
                     .IsUnique();
 

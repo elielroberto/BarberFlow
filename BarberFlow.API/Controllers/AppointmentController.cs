@@ -1,8 +1,6 @@
 ﻿using BarberFlow.Application.DTOs.Appointment;
 using BarberFlow.Application.DTOs.BlockedTime;
 using BarberFlow.Application.Interfaces;
-using BarberFlow.Application.Services;
-using BarberFlow.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -75,6 +73,8 @@ namespace BarberFlow.API.Controllers
         }
 
 
+
+
     [Authorize(Roles = "Client")]
     [HttpGet("me")]
     public async Task<IActionResult> GetMyAppointments()
@@ -110,7 +110,7 @@ namespace BarberFlow.API.Controllers
         return Ok(result);
     }
 
-        [Authorize(Roles = "Barber")]
+        [Authorize(Roles = "Professional")]
         [HttpPost("block")]
         public async Task<IActionResult> BlockTime(CreateBlockedTimeDto dto)
         {
@@ -125,6 +125,18 @@ namespace BarberFlow.API.Controllers
                 return BadRequest("Não foi possível bloquear horário");
 
             return Ok("Horário bloqueado");
+        }
+
+        [Authorize(Roles = "Professional")]
+        [HttpDelete("block/{id}")]
+        public async Task<IActionResult> RemoveBlock(Guid id)
+        {
+            var result = await _appointmentService.RemoveBlockedTimeAsync(id);
+
+            if (!result)
+                return NotFound("Bloqueio não encontrado");
+
+            return Ok("Bloqueio removido");
         }
     }
 }

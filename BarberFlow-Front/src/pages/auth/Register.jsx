@@ -2,6 +2,7 @@ import { useState } from "react";
 import { register } from "../../services/auth.service";
 
 export default function Register() {
+  const [name, setName] = useState(""); 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -9,18 +10,27 @@ export default function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
 
+    if (!name) {
+      alert("Informe seu nome");
+      return;
+    }
+
     if (password !== confirmPassword) {
       alert("As senhas não coincidem");
       return;
     }
 
     try {
-      await register({ email, password });
+      await register({
+        name, // 🔥 enviado
+        email,
+        password,
+      });
 
       alert("Conta criada com sucesso!");
-
       window.location.href = "/";
     } catch (error) {
+      console.log(error);
       alert("Erro ao cadastrar");
     }
   };
@@ -28,30 +38,32 @@ export default function Register() {
   return (
     <div
       className="min-h-screen flex items-center justify-center bg-black bg-cover bg-center relative"
-      style={{
-        backgroundImage: "url('/barber-bg.png')",
-      }}
+      style={{ backgroundImage: "url('/barber-bg.png')" }}
     >
-      {/* Overlay */}
       <div className="absolute inset-0 bg-black/80"></div>
 
-      {/* Card */}
       <div className="relative bg-zinc-900/80 p-8 rounded-2xl shadow-2xl border border-zinc-700 w-full max-w-sm backdrop-blur">
         
-        {/* Logo */}
         <img
           src="/barber-bg.png"
           alt="logo"
           className="w-16 mx-auto mb-4"
         />
 
-        {/* Título */}
         <h1 className="text-3xl font-bold text-white text-center mb-6 tracking-wide">
           Criar conta
         </h1>
 
-        {/* Form */}
         <form onSubmit={handleRegister} className="flex flex-col gap-4">
+
+          {/* 🔥 NOVO CAMPO */}
+          <input
+            type="text"
+            placeholder="Nome"
+            className="p-3 rounded bg-zinc-800 text-white outline-none focus:ring-2 focus:ring-yellow-500"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
 
           <input
             type="email"
@@ -85,8 +97,9 @@ export default function Register() {
           </button>
 
         </form>
-        <br></br>
-        {/* Link login */}
+
+        <br />
+
         <p className="text-sm text-zinc-400 mt-4 text-center">
           Já tem conta?{" "}
           <a href="/" className="text-yellow-500 hover:underline">

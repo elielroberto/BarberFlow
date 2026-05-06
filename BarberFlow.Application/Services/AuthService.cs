@@ -32,6 +32,7 @@ namespace BarberFlow.Application.Services
             var user = new User
             {
                 Id = Guid.NewGuid(),
+                Name = dto.Name,
                 Email = dto.Email,
                 PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password),
                 Role = UserRole.Client
@@ -42,7 +43,7 @@ namespace BarberFlow.Application.Services
             var client = new Client
             {
                 Id = Guid.NewGuid(),
-                Name = dto.Email, 
+                Name = dto.Name, 
                 Phone = "",
                 UserId = user.Id
             };

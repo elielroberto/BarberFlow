@@ -17,5 +17,6 @@ namespace BarberFlow.Application.Interfaces
         Task<List<AppointmentResponseDto>> GetMyAppointmentsAsync(Guid userId);
         Task<List<AppointmentResponseDto>> GetMyScheduleAsync(Guid userId);
         Task<bool> CreateBlockedTimeAsync(Guid userId, CreateBlockedTimeDto dto);
+        Task<bool> RemoveBlockedTimeAsync(Guid blockedTimeId);
     }
 }

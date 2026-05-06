@@ -39,7 +39,7 @@ namespace BarberFlow.Application.Services
                     var professional = new Professional
                     {
                         Id = Guid.NewGuid(),
-                        Name = user.Email, 
+                        Name = user.Name, 
                         UserId = user.Id
                     };
 

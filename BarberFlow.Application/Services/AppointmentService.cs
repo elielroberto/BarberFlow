@@ -111,10 +111,10 @@ namespace BarberFlow.Application.Services
         {
             const int SLOT_DURATION = 30;
 
-            var startDay = date.Date.AddHours(9);   // abertura
-            var endDay = date.Date.AddHours(18);    // fechamento
+            var startDay = date.Date.AddHours(9);
+            var endDay = date.Date.AddHours(18);
 
-            // gerar todos os slots do dia
+            // TODOS OS SLOTS DO DIA
             var allSlots = new List<DateTime>();
 
             for (var time = startDay; time < endDay; time = time.AddMinutes(SLOT_DURATION))
@@ -122,8 +122,10 @@ namespace BarberFlow.Application.Services
                 allSlots.Add(time);
             }
 
-            // pegar agendamentos do dia
+            // AGENDAMENTOS
             var appointments = await _context.Appointments
+                .Include(x => x.Client)
+                .Include(x => x.Service)
                 .Where(x =>
                     x.ProfessionalId == professionalId &&
                     x.Status == AppointmentStatus.Scheduled &&
@@ -131,29 +133,55 @@ namespace BarberFlow.Application.Services
                 )
                 .ToListAsync();
 
-            // pegar slots ocupados
-            var occupiedSlots = new List<DateTime>();
+            // BLOQUEIOS
+            var blockedTimes = await _context.BlockedTimes
+                .Where(x =>
+                    x.ProfessionalId == professionalId &&
+                    x.Start.Date == date.Date
+                )
+                .ToListAsync();
 
-            foreach (var appt in appointments)
-            {
-                for (var time = appt.StartTime; time < appt.EndTime; time = time.AddMinutes(SLOT_DURATION))
+            // RESULTADO
+            var result = allSlots
+                .Select(slot =>
                 {
-                    occupiedSlots.Add(time);
-                }
-            }
+                    // AGENDAMENTO
+                    var appointment = appointments.FirstOrDefault(a =>
+                        slot >= a.StartTime &&
+                        slot < a.EndTime
+                    );
 
-            //  remover ocupados
-            var availableSlots = allSlots
-                .Where(slot => !occupiedSlots.Contains(slot))
-                .Select(slot => new AvailableSlotDto
-                {
-                    Time = slot
+                    // BLOQUEIO
+                    var blocked = blockedTimes.FirstOrDefault(b =>
+                        slot >= b.Start &&
+                        slot < b.End
+                    );
+
+                    return new AvailableSlotDto
+                    {
+                        Start = DateTime.SpecifyKind(slot, DateTimeKind.Local),
+
+                        Available =
+                        appointment == null &&
+                        blocked == null,
+
+                        ClientName = appointment?.Client?.Name,
+
+                        ServiceName = appointment?.Service?.Name,
+
+                        EndTime = appointment?.EndTime,
+
+                        IsBlocked = blocked != null,
+
+                        BlockedId = blocked?.Id,
+
+                        AppointmentId = appointment?.Id,
+                    };
                 })
                 .ToList();
 
-            return availableSlots;
+            return result;
         }
-
         public async Task<bool> CancelAsync(Guid appointmentId)
         {
             var appointment = await _context.Appointments
@@ -262,8 +290,49 @@ namespace BarberFlow.Application.Services
             if (professional == null)
                 return false;
 
+            // NORMALIZA HORÁRIOS
+            dto.Start = new DateTime(
+                dto.Start.Year,
+                dto.Start.Month,
+                dto.Start.Day,
+                dto.Start.Hour,
+                dto.Start.Minute,
+                0
+            );
+
+            dto.End = new DateTime(
+                dto.End.Year,
+                dto.End.Month,
+                dto.End.Day,
+                dto.End.Hour,
+                dto.End.Minute,
+                0
+            );
+
             if (dto.End <= dto.Start)
                 return false;
+
+            // EVITAR BLOQUEIOS DUPLICADOS
+            var hasConflict = await _context.BlockedTimes
+                .AnyAsync(x =>
+                    x.ProfessionalId == professional.Id &&
+                    dto.Start < x.End &&
+                    dto.End > x.Start
+                );
+
+            if (hasConflict)
+                return false;
+
+            var hasAppointmentConflict = await _context.Appointments
+            .AnyAsync(x =>
+                x.ProfessionalId == professional.Id &&
+                x.Status == AppointmentStatus.Scheduled &&
+                dto.Start < x.EndTime &&
+                dto.End > x.StartTime
+            );
+
+           if (hasAppointmentConflict)
+                        return false;
 
             var blocked = new BlockedTime
             {
@@ -276,10 +345,25 @@ namespace BarberFlow.Application.Services
             };
 
             _context.BlockedTimes.Add(blocked);
+
             await _context.SaveChangesAsync();
 
             return true;
         }
 
+        public async Task<bool> RemoveBlockedTimeAsync(Guid blockedTimeId)
+        {
+            var blocked = await _context.BlockedTimes
+                .FirstOrDefaultAsync(x => x.Id == blockedTimeId);
+
+            if (blocked == null)
+                return false;
+
+            _context.BlockedTimes.Remove(blocked);
+
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
     }
 }
