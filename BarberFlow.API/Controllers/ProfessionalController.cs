@@ -35,5 +35,20 @@ namespace BarberFlow.API.Controllers
 
             return Ok(professional.Id);
         }
+
+        [Authorize]
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var professionals = await _context.Professionals
+                .Select(x => new
+                {
+                    x.Id,
+                    x.Name
+                })
+                .ToListAsync();
+
+            return Ok(professionals);
+        }
     }
 }

@@ -29,3 +29,9 @@ export const cancelAppointment = async (id) => {
 export const removeBlock = async (id) => {
   return await api.delete(`/appointment/block/${id}`);
 };
+export const createAppointment = async (data) => {
+  return await api.post("/appointment", data);
+};
+export const getMyAppointments = async () => {
+  return await api.get("/appointment/me");
+};

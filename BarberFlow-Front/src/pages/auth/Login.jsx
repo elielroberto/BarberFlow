@@ -24,7 +24,7 @@ export default function Login() {
       } else if (user.role === "Professional") {
       window.location.href = "/barber";
       } else {
-      window.location.href = "/dashboard";
+      window.location.href = "/booking";
       }
     } catch (error) {
       alert("Email ou senha inválidos");

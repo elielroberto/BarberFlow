@@ -138,11 +138,22 @@ namespace BarberFlow.Application.Services
                 .Where(x =>
                     x.ProfessionalId == professionalId &&
                     x.Start.Date == date.Date
-                )
+                )l
                 .ToListAsync();
 
             // RESULTADO
+
+            var now = DateTime.Now;
             var result = allSlots
+                .Where(slot =>
+                {
+                    // se não for hoje, mostra tudo
+                    if (date.Date != now.Date)
+                        return true;
+
+                    // permite exatamente o horário atual
+                    return slot >= now;
+                })
                 .Select(slot =>
                 {
                     // AGENDAMENTO
@@ -235,6 +246,10 @@ namespace BarberFlow.Application.Services
                 .Include(x => x.Client)
                 .Include(x => x.Professional)
                 .Include(x => x.Service)
+                 .Where(x =>
+                    x.ClientId == client.Id &&
+                    x.Status == AppointmentStatus.Scheduled
+                )
                 .OrderByDescending(x => x.StartTime)
                 .Select(x => new AppointmentResponseDto
                 {

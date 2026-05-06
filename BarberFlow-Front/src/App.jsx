@@ -9,7 +9,8 @@ import AdminDashboard from "./pages/admin/AdminDashboard";
 import UsersList from "./pages/admin/UsersList";
 import EditService from "./pages/admin/EditService";
 import BarberDashboard from "./pages/barber/BarberDashboard";
-
+import ClientBooking from "./pages/cliente/ClientBooking";
+import MyAppointments from "./pages/cliente/MyAppointments";
 
 // páginas exemplo
 function Dashboard() {
@@ -92,6 +93,23 @@ function App() {
           </PrivateRoute>
         }
       />
+
+      <Route
+      path="/booking"
+      element={
+        <PrivateRoute allowedRoles={["Client"]}>
+          <ClientBooking />
+        </PrivateRoute>
+      }
+    />
+    <Route
+    path="/my-appointments"
+    element={
+      <PrivateRoute allowedRoles={["Client"]}>
+        <MyAppointments />
+      </PrivateRoute>
+    }
+  />
 
     </Routes>
     </BrowserRouter>
