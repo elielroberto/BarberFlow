@@ -9,8 +9,8 @@ import AdminDashboard from "./pages/admin/AdminDashboard";
 import UsersList from "./pages/admin/UsersList";
 import EditService from "./pages/admin/EditService";
 import BarberDashboard from "./pages/barber/BarberDashboard";
-import ClientBooking from "./pages/cliente/ClientBooking";
-import MyAppointments from "./pages/cliente/MyAppointments";
+import ClientBooking from "./pages/Cliente/ClientBooking";
+import MyAppointments from "./pages/Cliente/MyAppointments";
 
 // páginas exemplo
 function Dashboard() {
