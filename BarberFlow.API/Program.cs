@@ -101,7 +101,7 @@ builder.Services.AddCors(options =>
     {
         policy
             .WithOrigins(
-                "https://barber-flow.vercel.app",
+                "https://barber-flow-pi.vercel.app/",
                 "http://localhost:5173"
             )
             .AllowAnyHeader()
