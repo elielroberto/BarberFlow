@@ -480,3 +480,6 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+B a r b e r F l o w . A P I / a p p s e t t i n g s . D e v e l o p m e n t . j s o n  
+ 
+BarberFlow.API/appsettings.Development.json
